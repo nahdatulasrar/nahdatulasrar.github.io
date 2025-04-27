@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নাহদাতুল আসরার ফাউন্ডেশন</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Hind Siliguri', 'Tajawal', sans-serif;
+    }
+    
+    .arabic {
+      font-family: 'Tajawal', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50" x-data="data()">
+  <!-- Navigation -->
+  <nav class="bg-green-800 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img class="size-12 rounded-lg" src="/images/logo.png" alt="">
+        <span class="text-xl font-bold">নাহদাতুল আসরার ফাউন্ডেশন</span>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-green-200">হোম</a>
+        <a href="#about" class="hover:text-green-200">আমাদের সম্পর্কে</a>
+        <a href="#programs" class="hover:text-green-200">প্রোগ্রামসমূহ</a>
+        <a href="#gallery" class="hover:text-green-200">গ্যালারি</a>
+        <a href="#contact" class="hover:text-green-200">যোগাযোগ</a>
+      </div>
+      <button class="md:hidden text-xl" @click="mobileMenuOpen = !mobileMenuOpen">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-green-700" x-show="mobileMenuOpen" x-transition>
+      <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+        <a href="#home" class="block py-2 hover:text-green-200">হোম</a>
+        <a href="#about" class="block py-2 hover:text-green-200">আমাদের সম্পর্কে</a>
+        <a href="#programs" class="block py-2 hover:text-green-200">প্রোগ্রামসমূহ</a>
+        <a href="#gallery" class="block py-2 hover:text-green-200">গ্যালারি</a>
+        <a href="#contact" class="block py-2 hover:text-green-200">যোগাযোগ</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section id="home" class="relative bg-blue-900 text-white py-20 md:py-32">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 arabic">لُقْمَانُ الْحِكْمَةِ</h1>
+      <h2 class="text-2xl md:text-4xl font-bold mb-6">লুকানো শক্তির জাগরণে উম্মাহর নবজাগরণ</h2>
+      <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">ইসলামী শিক্ষা, নৈতিক মূল্যবোধ ও সমাজসেবার মাধ্যমে একটি সুন্দর সমাজ গঠনের লক্ষ্যে আমাদের যাত্রা</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#programs" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+          আমাদের প্রোগ্রাম
+        </a>
+        <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-900 px-6 py-3 rounded-lg font-semibold transition duration-300">
+          যোগাযোগ করুন
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Mission & Vision -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আমাদের মিশন ও ভিশন</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+          <div class="text-green-600 text-4xl mb-4">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">মিশন</h3>
+          <p class="text-gray-700">ইসলামী শিক্ষা ও নৈতিক মূল্যবোধের সমন্বয়ে একটি আদর্শ সমাজ গঠন। বিশেষ করে তরুণ প্রজন্মকে সঠিক পথে পরিচালিত করা এবং তাদের মাঝে লুকিয়ে থাকো সম্ভাবনাকে জাগ্রত করা আমাদের প্রধান লক্ষ্য।</p>
+        </div>
+        
+        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+          <div class="text-green-600 text-4xl mb-4">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">ভিশন</h3>
+          <p class="text-gray-700">আমরা envision একটি সমাজ যেখানে প্রতিটি ব্যক্তি ইসলামী মূল্যবোধে উদ্বুদ্ধ, জ্ঞানী ও দক্ষ, এবং যারা সমাজের উন্নয়নে সক্রিয়ভাবে অংশগ্রহণ করে। শিক্ষা, স্বাস্থ্য ও সামাজিক উন্নয়নের মাধ্যমে আমরা একটি সুস্থ ও সুন্দর সমাজ গঠন করতে চাই।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আমাদের টিম</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">যারা নাহদাতুল আসরার ফাউন্ডেশনকে নেতৃত্ব দিচ্ছেন</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md text-center hover:shadow-lg transition duration-300">
+          <img src="/images/logo.png" alt="Team Member" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">ড. মুহাম্মদ আলী</h3>
+            <p class="text-green-600 mb-2">চেয়ারম্যান</p>
+            <p class="text-gray-700 text-sm">ইসলামিক স্টাডিজে পিএইচডি, ২০ বছরের অভিজ্ঞতা</p>
+            <div class="flex justify-center mt-4 space-x-2">
+              <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md text-center hover:shadow-lg transition duration-300">
+          <img src="/images/logo.png" alt="Team Member" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">আয়েশা সিদ্দিকা</h3>
+            <p class="text-green-600 mb-2">মহিলা বিভাগ প্রধান</p>
+            <p class="text-gray-700 text-sm">সামাজিক কর্মী, নারী শিক্ষায় বিশেষজ্ঞ</p>
+            <div class="flex justify-center mt-4 space-x-2">
+              <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-pink-600 hover:text-pink-800"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md text-center hover:shadow-lg transition duration-300">
+          <img src="/images/logo.png" alt="Team Member" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">রফিকুল ইসলাম</h3>
+            <p class="text-green-600 mb-2">শিক্ষা বিভাগ প্রধান</p>
+            <p class="text-gray-700 text-sm">শিক্ষাবিদ, কারিকুলাম ডেভেলপমেন্ট বিশেষজ্ঞ</p>
+            <div class="flex justify-center mt-4 space-x-2">
+              <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md text-center hover:shadow-lg transition duration-300">
+          <img src="/images/logo.png" alt="Team Member" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">ইমরান হোসেন</h3>
+            <p class="text-green-600 mb-2">প্রশাসনিক কর্মকর্তা</p>
+            <p class="text-gray-700 text-sm">এমবিএ, অর্গানাইজেশনাল ম্যানেজমেন্ট</p>
+            <div class="flex justify-center mt-4 space-x-2">
+              <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Impact Stats -->
+  <section class="py-16 bg-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আমাদের অর্জন</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-4xl font-bold text-blue-900 mb-2">0</div>
+          <p class="text-gray-600">শিক্ষার্থী</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-4xl font-bold text-blue-900 mb-2">0</div>
+          <p class="text-gray-600">প্রশিক্ষিত নারী</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-4xl font-bold text-blue-900 mb-2">0</div>
+          <p class="text-gray-600">সামাজিক প্রকল্প</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-4xl font-bold text-blue-900 mb-2">0</div>
+          <p class="text-gray-600">উপকৃত পরিবার</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-blue-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আপনার দান পরিবর্তন আনতে পারে</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <h3 class="text-xl font-bold text-green-700 mb-3">৳ ১০০০</h3>
+          <p class="text-gray-700 mb-4">একজন শিক্ষার্থীর এক মাসের শিক্ষা উপকরণ</p>
+          <button class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg font-medium">দান করুন</button>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md text-center border-2 border-green-500 transform scale-105 z-10">
+          <div class="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded-bl-lg">প্রচলিত</div>
+          <h3 class="text-xl font-bold text-green-700 mb-3">৳ ৫০০০</h3>
+          <p class="text-gray-700 mb-4">একটি পরিবারের এক মাসের খাদ্য সহায়তা</p>
+          <button class="bg-green-100 text-green-800 px-4 py-2 rounded-lg font-medium">দান করুন</button>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <h3 class="text-xl font-bold text-green-700 mb-3">৳ ১০,০০০</h3>
+          <p class="text-gray-700 mb-4">একজন নারীর ভোকেশনাল ট্রেনিং</p>
+          <button class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg font-medium">দান করুন</button>
+        </div>
+      </div>
+      
+      <div class="mt-10 text-center">
+        <p class="text-gray-600 mb-4">কাস্টম অ্যামাউন্ট দিতে চাইলে:</p>
+        <div class="flex max-w-md mx-auto">
+          <span class="bg-gray-200 px-4 py-2 rounded-l-lg">৳</span>
+          <input type="number" class="flex-1 px-4 py-2 border-t border-b border-gray-300">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-r-lg font-semibold">দান করুন</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Programs -->
+  <section id="programs" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আমাদের প্রোগ্রামসমূহ</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="h-48 bg-blue-700 flex items-center justify-center text-white text-5xl">
+            <i class="fas fa-book-quran"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-blue-900 mb-3">ইসলামী শিক্ষা প্রোগ্রাম</h3>
+            <p class="text-gray-700 mb-4">কুরআন, হাদিস, ফিকহ ও ইসলামী ইতিহাসের উপর গভীর জ্ঞানার্জনের সুযোগ। বিশেষত তরুণদের জন্য বেসিক ইসলামিক স্টাডিজ কোর্স।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও জানুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="h-48 bg-green-700 flex items-center justify-center text-white text-5xl">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-blue-900 mb-3">ক্যারিয়ার ডেভেলপমেন্ট</h3>
+            <p class="text-gray-700 mb-4">প্রফেশনাল স্কিল ডেভেলপমেন্ট, কম্পিউটার ট্রেনিং, ভাষা শিক্ষা এবং ক্যারিয়ার গাইডেন্স প্রোগ্রাম।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও জানুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="h-48 bg-blue-600 flex items-center justify-center text-white text-5xl">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-blue-900 mb-3">সামাজিক সেবা</h3>
+            <p class="text-gray-700 mb-4">দরিদ্র পরিবার সহায়তা, স্বাস্থ্য সচেতনতা ক্যাম্প, বিনামূল্যে শিক্ষা উপকরণ বিতরণ এবং জরুরী ত্রাণ কার্যক্রম।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও জানুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+          সব প্রোগ্রাম দেখুন
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-blue-900 mb-4">আমাদের শাখা প্রতিষ্ঠান</h2>
+      <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">সারা দেশে আমাদের কর্মএলাকা</p>
+    </div>
+    
+    <!-- Branch Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+        <div class="h-48 bg-blue-600 flex items-center justify-center text-white text-4xl">
+          <i class="fas fa-mosque"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-blue-900 mb-2">নাহদাতুল আসরার একাডেমী, ঢাকা</h3>
+          <p class="text-gray-600 mb-3"><i class="fas fa-map-marker-alt mr-2 text-green-600"></i>মিরপুর-১০, ঢাকা</p>
+          <p class="text-gray-700 mb-4">প্রতিষ্ঠাকাল: ২০১২<br>প্রধান: মাওলানা আব্দুল্লাহ আল মামুন<br>কার্যক্রম: হিফজ বিভাগ, আলিম বিভাগ, কম্পিউটার ট্রেনিং</p>
+          <a href="#" class="text-green-600 font-semibold hover:text-green-800 inline-flex items-center">
+            বিস্তারিত জানুন <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+        <div class="h-48 bg-green-700 flex items-center justify-center text-white text-4xl">
+          <i class="fas fa-school"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-blue-900 mb-2">নাহদাতুল আসরার মাদ্রাসা, চট্টগ্রাম</h3>
+          <p class="text-gray-600 mb-3"><i class="fas fa-map-marker-alt mr-2 text-green-600"></i>হালিশহর, চট্টগ্রাম</p>
+          <p class="text-gray-700 mb-4">প্রতিষ্ঠাকাল: ২০১৫<br>প্রধান: মুফতি ইব্রাহিম খলিল<br>কার্যক্রম: কওমী ধারার শিক্ষা, হিফজ বিভাগ, আরবি ভাষা কোর্স</p>
+          <a href="#" class="text-green-600 font-semibold hover:text-green-800 inline-flex items-center">
+            বিস্তারিত জানুন <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+        <div class="h-48 bg-blue-500 flex items-center justify-center text-white text-4xl">
+          <i class="fas fa-female"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-blue-900 mb-2">নাহদাতুল আসরার মহিলা বিভাগ, সিলেট</h3>
+          <p class="text-gray-600 mb-3"><i class="fas fa-map-marker-alt mr-2 text-green-600"></i>জিন্দাবাজার, সিলেট</p>
+          <p class="text-gray-700 mb-4">প্রতিষ্ঠাকাল: ২০১৮<br>প্রধান: উস্তাদা মরিয়ম আক্তার<br>কার্যক্রম: নারী শিক্ষা, সেলাই প্রশিক্ষণ, প্রাথমিক স্বাস্থ্য শিক্ষা</p>
+          <a href="#" class="text-green-600 font-semibold hover:text-green-800 inline-flex items-center">
+            বিস্তারিত জানুন <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Additional Branches Button -->
+    <div class="text-center mt-12">
+      <a href="#" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+        <i class="fas fa-map-marked-alt mr-2"></i> সমস্ত শাখা দেখুন
+      </a>
+    </div>
+  </div>
+</section>
+  
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">স্বেচ্ছাসেবক হোন</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">আপনার সময় ও দক্ষতা দিয়ে আমাদের কার্যক্রমে অংশ নিন</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md text-center">
+          <div class="text-green-600 text-4xl mb-4">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">কেন স্বেচ্ছাসেবক হবেন?</h3>
+          <p class="text-gray-700">সমাজ উন্নয়নে সরাসরি ভূমিকা রাখুন, নতুন দক্ষতা অর্জন করুন এবং সৎ মানুষের সাথে কাজ করার সুযোগ পান।</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md text-center">
+          <div class="text-green-600 text-4xl mb-4">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">স্বেচ্ছাসেবকদের কাজ</h3>
+          <p class="text-gray-700">শিক্ষা কার্যক্রম, ইভেন্ট ম্যানেজমেন্ট, সোশ্যাল মিডিয়া ম্যানেজমেন্ট, ফান্ড রেইজিং সহ বিভিন্ন ক্ষেত্রে অবদান রাখুন।</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md text-center">
+          <div class="text-green-600 text-4xl mb-4">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">কিভাবে যোগ দেবেন?</h3>
+          <p class="text-gray-700">নিচের বাটন ক্লিক করে ফর্ম পূরণ করুন। আমরা আপনার সাথে যোগাযোগ করব।</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+          স্বেচ্ছাসেবক ফর্ম পূরণ করুন
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Gallery -->
+  <section id="gallery" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আমাদের কার্যক্রম</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">আমাদের বিভিন্ন সামাজিক ও শিক্ষামূলক কার্যক্রমের কিছু মুহূর্ত</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Education Program" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Career Training" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+          <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Social Service" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Community Work" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+          আরও ছবি দেখুন
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">সাধারণ মানুষের কথা</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <!-- Testimonial Slides -->
+      <div class="relative overflow-hidden">
+        <div class="flex transition-transform duration-300" :style="`transform: translateX(-${currentIndex * 100}%)`">
+          <template x-for="(testimonial, index) in testimonials" :key="index">
+            <div class="w-full flex-shrink-0 px-4">
+              <div class="bg-gray-50 p-8 rounded-lg shadow-md text-center max-w-4xl mx-auto">
+                <div class="text-yellow-400 mb-4 text-xl">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700 text-lg mb-6" x-text="testimonial.text"></p>
+                <div class="flex items-center justify-center">
+                  <img :src="testimonial.image" :alt="testimonial.name" class="w-12 h-12 rounded-full mr-4 object-cover border-2 border-green-500">
+                  <div class="text-left">
+                    <h4 class="font-bold text-gray-900" x-text="testimonial.name"></h4>
+                    <p class="text-gray-600 text-sm" x-text="testimonial.title"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+      
+      <!-- Navigation Dots -->
+      <div class="flex justify-center mt-8">
+        <template x-for="(_, index) in testimonials" :key="index">
+          <button @click="goToTestimonial(index)" class="w-3 h-3 rounded-full mx-1 focus:outline-none" :class="currentIndex === index ? 'bg-green-600 w-6' : 'bg-gray-300'" aria-label="Go to testimonial">
+          </button>
+        </template>
+      </div>
+      
+      <!-- Navigation Arrows -->
+      <div class="flex justify-center mt-6 space-x-4">
+        <button @click="prevTestimonial" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button @click="nextTestimonial" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- News/Updates -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">সাম্প্রতিক খবর ও ইভেন্ট</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1524179091875-bf99a9a5eaa5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Event" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">১৫ জুন, ২০২৩</div>
+            <h3 class="text-xl font-bold text-blue-900 mb-3">বার্ষিক শিক্ষা সম্মেলন ২০২৩</h3>
+            <p class="text-gray-700 mb-4">আমাদের বার্ষিক শিক্ষা সম্মেলন আগামী মাসে অনুষ্ঠিত হতে যাচ্ছে। সকল শিক্ষার্থী ও অভিভাবকদের আমন্ত্রণ।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Event" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">২৮ মে, ২০২৩</div>
+            <h3 class="text-xl font-bold text-blue-900 mb-3">নতুন ব্যাচের ভর্তি শুরু</h3>
+            <p class="text-gray-700 mb-4">আমাদের ইসলামিক স্টাডিজ প্রোগ্রামের নতুন ব্যাচের ভর্তি শুরু হয়েছে। দ্রুত আবেদন করুন।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Event" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">১০ মে, ২০২৩</div>
+            <h3 class="text-xl font-bold text-blue-900 mb-3">রমজান ত্রাণ কর্মসূচি</h3>
+            <p class="text-gray-700 mb-4">গত রমজানে আমরা ৫০০ দরিদ্র পরিবারের মাঝে খাদ্য ও প্রয়োজনীয় সামগ্রী বিতরণ করেছি।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আসন্ন ইভেন্টসমূহ</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg overflow-hidden shadow-md">
+          <div class="bg-green-600 text-white text-center py-2">
+            <div class="text-2xl font-bold">১৫</div>
+            <div class="text-sm">জুন, ২০২৩</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">বার্ষিক শিক্ষা সম্মেলন</h3>
+            <p class="text-gray-600 mb-4"><i class="fas fa-clock mr-2"></i>সকাল ৯:০০ - দুপুর ২:০০</p>
+            <p class="text-gray-700 mb-4">আমাদের বার্ষিক শিক্ষা সম্মেলনে সকলকে আমন্ত্রণ। বিশেষ অতিথি হিসেবে উপস্থিত থাকবেন বিশিষ্ট ইসলামিক স্কলারগণ।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও জানুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-lg overflow-hidden shadow-md">
+          <div class="bg-blue-600 text-white text-center py-2">
+            <div class="text-2xl font-bold">২২</div>
+            <div class="text-sm">জুন, ২০২৩</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">ক্যারিয়ার গাইডেন্স সেমিনার</h3>
+            <p class="text-gray-600 mb-4"><i class="fas fa-clock mr-2"></i>বিকাল ৩:০০ - সন্ধ্যা ৬:০০</p>
+            <p class="text-gray-700 mb-4">ক্যারিয়ার প্ল্যানিং, ইন্টারভিউ প্রস্তুতি এবং মার্কেট ডিমান্ড সম্পর্কে বিশেষ সেশন।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও জানুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-lg overflow-hidden shadow-md">
+          <div class="bg-orange-500 text-white text-center py-2">
+            <div class="text-2xl font-bold">৩০</div>
+            <div class="text-sm">জুন, ২০২৩</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">স্বাস্থ্য সচেতনতা ক্যাম্প</h3>
+            <p class="text-gray-600 mb-4"><i class="fas fa-clock mr-2"></i>সকাল ৮:০০ - দুপুর ১:০০</p>
+            <p class="text-gray-700 mb-4">বিনামূল্যে মেডিকেল চেকআপ, ওষুধ বিতরণ এবং স্বাস্থ্য সম্পর্কিত পরামর্শ সেশন।</p>
+            <a href="#" class="text-green-600 font-semibold hover:text-green-800">আরও জানুন <i class="fas fa-arrow-right ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+          সব ইভেন্ট দেখুন
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Call to Action -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">আপনিও আমাদের সাথে যুক্ত হোন</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">আপনার সময়, দক্ষতা বা দান দ্বারা আমাদের কার্যক্রমে সহায়তা করুন এবং সমাজ উন্নয়নে ভূমিকা রাখুন</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+          স্বেচ্ছাসেবক হোন
+        </a>
+        <a href="#" class="bg-white hover:bg-gray-100 text-blue-900 px-6 py-3 rounded-lg font-semibold transition duration-300">
+          দান করুন
+        </a>
+        <a href="#" class="bg-transparent hover:bg-blue-800 text-white border border-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+          যোগাযোগ করুন
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">যোগাযোগ করুন</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">আমাদের ঠিকানা</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-green-600 mt-1 mr-3"></i>
+              <p>১২৩ ইসলামী টাওয়ার, ঢাকা-১২১২, বাংলাদেশ</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-phone-alt text-green-600 mr-3"></i>
+              <p>+880 1234 567890</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-green-600 mr-3"></i>
+              <p>info@nahdatulasrar.org</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-clock text-green-600 mr-3"></i>
+              <p>শনি-বৃহস্পতি: সকাল ৯টা - সন্ধ্যা ৬টা</p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl font-bold text-blue-900 mt-8 mb-4">সোশ্যাল মিডিয়া</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition duration-300">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-700 transition duration-300">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">বার্তা পাঠান</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-gray-700 mb-1">আপনার নাম</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+            </div>
+            <div>
+              <label for="email" class="block text-gray-700 mb-1">ইমেইল</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+            </div>
+            <div>
+              <label for="subject" class="block text-gray-700 mb-1">বিষয়</label>
+              <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 mb-1">বার্তা</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"></textarea>
+            </div>
+            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+              পাঠান
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- WhatsApp Button -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/8801234567890" target="_blank" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+  </div>
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">আমাদের সহযোগী প্রতিষ্ঠান</h2>
+        <div class="w-24 h-1 bg-green-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+        <div class="p-4 grayscale hover:grayscale-0 transition duration-300">
+          <img src="/images/logo.png" alt="Partner" class="w-full h-auto">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition duration-300">
+          <img src="/images/logo.png" alt="Partner" class="w-full h-auto">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition duration-300">
+          <img src="/images/logo.png" alt="Partner" class="w-full h-auto">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition duration-300">
+          <img src="/images/logo.png" alt="Partner" class="w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">নাহদাতুল আসরার ফাউন্ডেশন</h3>
+          <p class="text-gray-400">ইসলামী শিক্ষা, নৈতিক মূল্যবোধ ও সমাজসেবার মাধ্যমে একটি সুন্দর সমাজ গঠনের লক্ষ্যে আমাদের যাত্রা।</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">লিঙ্কস</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">হোম</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">আমাদের সম্পর্কে</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">প্রোগ্রামসমূহ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">গ্যালারি</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">যোগাযোগ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">প্রোগ্রাম</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">ইসলামী শিক্ষা</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">ক্যারিয়ার ডেভেলপমেন্ট</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">সামাজিক সেবা</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">মহিলা উন্নয়ন</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">ইভেন্টস</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">নিউজলেটার</h3>
+          <p class="text-gray-400 mb-4">আমাদের কার্যক্রম সম্পর্কে আপডেট পেতে সাবস্ক্রাইব করুন</p>
+          <form class="flex">
+            <input type="email" placeholder="আপনার ইমেইল" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+            <button type="submit" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r-lg">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">© 2023 নাহদাতুল আসরার ফাউন্ডেশন। সকল স্বত্ব সংরক্ষিত।</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white transition duration-300">গোপনীয়তা নীতি</a>
+          <a href="#" class="text-gray-400 hover:text-white transition duration-300">শর্তাবলী</a>
+          <a href="#" class="text-gray-400 hover:text-white transition duration-300">সাইটম্যাপ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    function data() {
+      return {
+        mobileMenuOpen: false,
+        currentIndex: 0,
+        testimonials: [
+        {
+          text: 'ফাউন্ডেশনের শিক্ষা প্রোগ্রাম আমার সন্তানের জীবন বদলে দিয়েছে। এখন সে নিয়মিত কুরআন পড়ে এবং ভালো আচরণ করছে।',
+          name: 'আব্দুর রহমান',
+          title: 'অভিভাবক',
+          image: 'https://randomuser.me/api/portraits/men/32.jpg'
+        },
+        {
+          text: 'নার্সিং ট্রেনিং প্রোগ্রামের মাধ্যমে আমি এখন একটি হাসপাতালে কাজ করছি। আমার পরিবারের আর্থিক অবস্থার উন্নতি হয়েছে।',
+          name: 'আয়েশা বেগম',
+          title: 'প্রশিক্ষণার্থী',
+          image: 'https://randomuser.me/api/portraits/women/44.jpg'
+        },
+        {
+          text: 'স্বেচ্ছাসেবক হিসেবে কাজ করার অভিজ্ঞতা আমার দৃষ্টিভঙ্গি সম্পূর্ণ বদলে দিয়েছে। সমাজসেবার প্রকৃত অর্থ আমি এখন বুঝি।',
+          name: 'রাকিবুল ইসলাম',
+          title: 'স্বেচ্ছাসেবক',
+          image: 'https://randomuser.me/api/portraits/men/75.jpg'
+        }],
+        
+        init() {
+          // Auto slide every 5 seconds
+          setInterval(() => {
+            this.nextTestimonial();
+          }, 5000);
+        },
+        nextTestimonial() {
+          this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+        },
+        prevTestimonial() {
+          this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+        },
+        goToTestimonial(index) {
+          this.currentIndex = index;
+        },
+        toggleFAQ(index) {
+          this.openIndex = this.openIndex === index ? null : index;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
